@@ -66,7 +66,7 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
   	Hello						Stammmenü
 	| AVxxx:(A001|...|A412)<<			???
 	| balanc::					Systemweite Helligkeit für die drei Farben (überschreibt Werte des Programms)
-		(					Wenn das ding vorher per Laptop (DMX) gesteuert wurde, sind die werte 	wahrscheinlich alle auf 0 und das programm bleibt unsichtbar
+		(					Wenn der fluter vorher per Laptop (DMX) gesteuert wurde, sind die werte 	wahrscheinlich alle auf 0 und das programm bleibt unsichtbar
 	 	Rblnc:(0|...|255<)			Helligkeit für rot
 		|Gblnc:(0|...|255<)			Helligkeit für grün
 		|Bblnc:(0|...|255<)			Helligkeit für blau
@@ -101,21 +101,21 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 		<) 	
 	| tempe:(000°C|032°F<)				???
 	| mastr:(oFF|oN<)				Master an/aus (Wenn das Gerät nicht tut was man will, auf off und 	wieder on setzen!)
-	| slavID:(0|...|29<)				??? Slave ID Setzen
-	| sched.:(oFF|oN<)				??? Schedule an/aus
-	| PGrun:(off|1|...|5<)				sofort ein zuvor programmiertes Program ablaufen lassen
+	| slavID:(0|...|29<)				Slave ID Setzen
+	| sched.:(oFF|oN<)				Schedule an/aus
+	| PGrun:(off|1|...|5<)				Wählen welches Program sofort und nach Neustart ablaufen soll
 	| PGset::					Die 5 Programme einrichten
 		(
 	  	ProG.:(1|...|5<)			Das zu programmierende Program auswählen und in den folgenden 	Menüpunkten einstellen
 		| Scene:(0|...|10<)			Die Szene des eben gewählten Programms auswählen und in den folgenden 	Menüpunkten einstellen
 		| Fixt.:(all|odd|even|master|Slv001|...|Slv29<)	???
-		| Shutt:(000|...|255<)			Stroboskopgeschwindigkeit (dauer dass lampe aus ist) 000...003=immer 	aus | 004...006 immer an | 007 stroboskop ab etwa 007
+		| Shutt:(000|...|255<)			Stroboskopgeschwindigkeit (Dauer, dass lampe aus ist) 000...003=immer 	aus | 004...006 immer an | 007 stroboskop ab etwa 007
 		| Dimer:(0|...|255<)			Alle drei Farben Dimmen (von 0 dunkel bis 255 hell)
 		| R=255:(0|...|255<)			Intensität Rot
 		| G=176:(0|...|255<)			Intensität Grün
 		| B=124:(0|...|255<)			Intensität Blau
-		| MAC:(0|...|255<)			Wechsel zwischen den farben in unterschiedlichen Geschwindigkeiten und 	random, was bei einer passiert ist irgendwie nicht reproduzierbar
-								000...007 	passiert nix???
+		| MAC:(0|...|255<)			Wechsel zwischen den Farben in unterschiedlichen Geschwindigkeiten und 	Random, was bei einer passiert ist irgendwie nicht reproduzierbar
+								000...007 	passiert nix
 								008		langsamer farbwechsel maximal 2 farben an 	r>r+g>g>g+b>b>b+r...
 								009		in etwa langsam 3 farben 	r>rg>rgb>bg>rgb>rb>rbg>r>rg>g>gb>rgb>rb>rgb>rb>...
 										bei höheren schnellerer wechsel
@@ -126,11 +126,11 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 		| Fd_H:(00|...|59<)			Dauer des Fade-In: Stunden
 		| Fd_m:(00|...|59<)			Dauer des Fade-In: Minuten
 		| Fd_S:(00|...|59<)			Dauer des Fade-In: Sekunden
-		| SCrun*:(oFF|on<)			Szene im Ablauf des Programmes der Szene abspielen (on) oder auslassen 	(off) (Achtung alle nicht verwendeten Szenen auf off setzen!)
+		| SCrun*:(oFF|on<)			Szene im Ablauf des Programmes der Szene abspielen (on) oder auslassen 	(off) (Hier alle nicht verwendeten Szenen auf off setzen!)
 		<<)
 	| SchEDl*:					36 programmierbare Events programmieren, die zu bestimmter 	Uhrzeit/Wochentag ein Programm starten und beenden
 		(
-	  	event:(1|...|36)			Eventnummer wählen, das in den Folgenden Menüpunkten eingestellt wird
+	  	event:(1|...|36)			Event wählen, das in den Folgenden Menüpunkten eingestellt wird
 	 	|Prog.:(0|...|5<)			Programm wählen, das gestartet wird
 	 	|day:(mon|tue|wed|thu|fri|sat|sun|all<)	Wochentag wählen
 	 	|start:((00|...|24>)(00|..|59<)		Startuhrzeit 
@@ -144,8 +144,8 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 # 4) Howtos
 
 ## Farb-Verlauf programmieren und starten ohne angeschlossenem Rechner/DMX
-Man kann 5 verschiedene Programme (z.B. ein Farbverlauf von Grün zu Rot zu Blau und wieder zu grün usw.) programmieren, die abgespielt werden können.
-Ein Programm setzt sich aus einzelnen "Szenen" (scenes) zusammen die nacheinander für eine bestimme Dauer und einer bestimmten Übergangsdauer in Endlosschleife abgespielt werden, wenn sie gestartet werden.
+Man kann fünf verschiedene Programme (z.B. ein Farbverlauf von Grün zu Rot zu Blau und wieder zu grün usw.) programmieren, die abgespielt werden können.
+Ein Programm setzt sich aus einzelnen "Szenen" (scenes) zusammen, die nacheinander für eine bestimme Dauer und einer bestimmten Übergangsdauer in Endlosschleife abgespielt werden, wenn sie gestartet werden.
 Eine Szene definiert die Intensität der drei Farben die Dauer, die Fade-Dauer und mehr Eigenschaften (z.B. Blinkgeschwindigkeit)
 
 	Vorher:
@@ -173,4 +173,3 @@ Eine Szene definiert die Intensität der drei Farben die Dauer, die Fade-Dauer u
 	Schedule kann unter "sched" auch insgesamt ab- und angeschaltet werden.
 	Uhrzeit und Datum muss gesetzt sein.
 	Trotz einschalten und setzen der Uhrzeit wurden die Events nicht gestartet. Es muss noch irgendwo ein Menüpunkt geben der scheduling ermöglicht.
-	
