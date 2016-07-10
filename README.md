@@ -1,41 +1,41 @@
-   ___ _     _                 __    __  ___     ___ _       _            
-  / __\ |__ (_)_ __   ___     / /   /__\/   \   / __\ |_   _| |_ ___ _ __ 
- / /  | '_ \| | '_ \ / _ \   / /   /_\ / /\ /  / _\ | | | | | __/ _ \ '__|
-/ /___| | | | | |_) | (_) | / /___//__/ /_//  / /   | | |_| | ||  __/ |   
-\____/|_| |_|_| .__/ \___/  \____/\__/___,'   \/    |_|\__,_|\__\___|_|   
-              |_|                 reverse engineerte Anleitung by benks v1.0
+>    ___ _     _                 __    __  ___     ___ _       _            
+>   / __\ |__ (_)_ __   ___     / /   /__\/   \   / __\ |_   _| |_ ___ _ __ 
+>  / /  | '_ \| | '_ \ / _ \   / /   /_\ / /\ /  / _\ | | | | | __/ _ \ '__|
+> / /___| | | | | |_) | (_) | / /___//__/ /_//  / /   | | |_| | ||  __/ |   
+> \____/|_| |_|_| .__/ \___/  \____/\__/___,'   \/    |_|\__,_|\__\___|_|   
+>               |_|                 reverse engineerte Anleitung by benks v1.0
               
 Auch im Netz gefundene Namen "Chippo LED" "Chipo LED Wash" "Litecraft LED Chipo RGB" "Litecraft Chipo LED 49x 1W/3W LED"
  
  
 
-= Inhalt =
+# Inhalt 
 	1) Wie dieses Manual zu lesen ist
 	2) Syntax diese Manuals
 	3) Aufbau des Menüs
 	4) HowTo's
 
 
-== 1) Wie dieses Manual zu lesen ist ==
+# 1) Wie dieses Manual zu lesen ist
 Der Fluter hat 3 Tasten und ein Display
 	links (enter)
 	mitte (down)
 	rechts (up)
 
-Skizze:
-  ___________________                                                                        
- /                   \
-|   o o o o o o o o   |
-|  o o o o o o o o o  |
-|   o o o o o o o o   |
-|  o o o o o o o o o  |
-|   o o o o o o o o   |
- \___________________/
- _||_______||_______||_
-|                      |
-|      ( Hello )       |
-| o Enter o Down o Up  |
-|______________________|
+## Skizze
+    ___________________                                                                        
+   /                   \
+  |   o o o o o o o o   |
+  |  o o o o o o o o o  |
+  |   o o o o o o o o   |
+  |  o o o o o o o o o  |
+  |   o o o o o o o o   |
+   \___________________/
+   _||_______||_______||_
+  |                      |
+  |      ( Hello )       |
+  | o Enter o Down o Up  |
+  |______________________|
 
 
 Der Chipo LED-Fluter hat ein Baum-Menü in dem man mit den drei tasten navigiert und Einstellungen verändert. Es wird immer ein Menüpunkt bzw. ein Wert im Display angezeigt.
@@ -43,7 +43,7 @@ Nach dem Anschalten befindet man sich im Stammmenü "Hello"
 Wie das Menü aufgebaut ist und mit welchen Tasten man sich in dem Menü bewegt und Werte verändert ist unten unter 3) systematisch aufgeschrieben.
 Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt jetzt:
 
-== 2) Syntax dieses Manuals ==
+# 2) Syntax dieses Manuals
 
 wOrT 		steht für einen Menüpunkt z.B. "Hello", "PGset" oder "boost"
 . 		steht für einen Menüpunkt in Kurzschreibweise
@@ -62,7 +62,7 @@ wOrT 		steht für einen Menüpunkt z.B. "Hello", "PGset" oder "boost"
 ???		Steht für eine Erklärung eines Menüpunkts in diesem Howto, der bisher unklar ist
 
 
-== 3) Aufbau des Menüs ==
+# 3) Aufbau des Menüs
   Hello					Stammmenü
 | AVxxx:(A001|...|A412)<<		???
 | balanc::				Systemweite Helligkeit für die drei Farben (überschreibt Werte des Programms)
@@ -142,36 +142,36 @@ wOrT 		steht für einen Menüpunkt z.B. "Hello", "PGset" oder "boost"
 
 =================================================
 
-== 4) Howtos ==
+# 4) Howtos
 
-= Farb-Verlauf programmieren und starten ohne angeschlossenem Rechner/DMX =
+## Farb-Verlauf programmieren und starten ohne angeschlossenem Rechner/DMX
 Man kann 5 verschiedene Programme (z.B. ein Farbverlauf von Grün zu Rot zu Blau und wieder zu grün usw.) programmieren, die abgespielt werden können.
 Ein Programm setzt sich aus einzelnen "Szenen" (scenes) zusammen die nacheinander für eine bestimme Dauer und einer bestimmten Übergangsdauer in Endlosschleife abgespielt werden, wenn sie gestartet werden.
 Eine Szene definiert die Intensität der drei Farben die Dauer, die Fade-Dauer und mehr Eigenschaften (z.B. Blinkgeschwindigkeit)
 
-	Vorher:
-		Falls der Fluter zuvor per DMX betrieben wurde, sind die Farben wahrscheinlich runtergeregelt (alles auf 000) und das Gerät auf "slave" gestellt. Daher:
-		* unter "balanc" Grundhelligkeit des Geräts der drei Farben hochstellen auf 255
-		* und unter "mastr" Master auf "on" setzen
+### Vorher:
+Falls der Fluter zuvor per DMX betrieben wurde, sind die Farben wahrscheinlich runtergeregelt (alles auf 000) und das Gerät auf "slave" gestellt. Daher:
+* unter "balanc" Grundhelligkeit des Geräts der drei Farben hochstellen auf 255
+* und unter "mastr" Master auf "on" setzen
 
-	Programmieren:
-		* im Menü PGset unter
-		* Prog: eines der 5 Programme auswählen, das nun programmiert (und damit überschrieben) wird
-		* Scen - erste szene wählen
-		* Dimmung, Farben, etc. Dauer (incl. Fade-In) und Fade-In-Dauer einstellen, und SCrun (scene run) auf "on" aktivieren
-		* Scen - zweite Szene Wählen, einstellen aktivieren usw.
-		* alle nicht benötogten scenes unter SCrun auf "off" schalten
-		* menü verlassen
+### Programmieren
+* im Menü PGset unter
+* Prog: eines der 5 Programme auswählen, das nun programmiert (und damit überschrieben) wird
+* Scen - erste szene wählen
+* Dimmung, Farben, etc. Dauer (incl. Fade-In) und Fade-In-Dauer einstellen, und SCrun (scene run) auf "on" aktivieren
+* Scen - zweite Szene Wählen, einstellen aktivieren usw.
+* alle nicht benötogten scenes unter SCrun auf "off" schalten
+* menü verlassen
 	
-	Starten:
-		* PGrun im Hauptmenü öffnen
-		* unter "scene" die eben programmierte Szene wählen – Fertig
-		
-		Wenn nach dem Abschalten/Steckerziehen wieder neu Strom fließt startet das gewählte Programm automatisch
+### Starten:
+* PGrun im Hauptmenü öffnen
+* unter "scene" die eben programmierte Szene wählen – Fertig
 
-= Zeitprogrammierung =
-	Mit SchEDL man kann 36 Events anlegen Wochentage, Uhrzeiten etc, welches der 5 Programme starten soll. Events kann man aus und anschalten
-	Schedule kann unter "sched" auch insgesamt ab- und angeschaltet werden.
-	Uhrzeit und Datum muss gesetzt sein.
-	Trotz einschalten und setzen der Uhrzeit wurden die Events nicht gestartet. Es muss noch irgendwo ein Menüpunkt geben der scheduling ermöglicht.
+Wenn nach dem Abschalten/Steckerziehen wieder neu Strom fließt startet das gewählte Programm automatisch
+
+## Zeitprogrammierung
+* Mit SchEDL man kann 36 Events anlegen Wochentage, Uhrzeiten etc, welches der 5 Programme starten soll. Events kann man aus und anschalten.
+* Die Schedulefunktion kann unter "sched" auch insgesamt ab- und angeschaltet werden.
+* Uhrzeit und Datum muss gesetzt sein.
+* Trotz einschalten und setzen der Uhrzeit wurden die Events nicht gestartet. Es muss noch irgendwo ein Menüpunkt geben der scheduling ermöglicht.
 	
