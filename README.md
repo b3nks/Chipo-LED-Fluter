@@ -159,18 +159,20 @@ Eine Szene definiert die Intensität der drei Farben die Dauer, die Fade-Dauer u
 
 	Programmieren:
 		* im Menü PGset unter
-		* Prog: eines der 5 Programme auswählen, das nun programmiert (und damit überschrieben) wird
+		* Prog: eines der fünf Programme auswählen, das nun programmiert (und damit überschrieben) wird
 		* Scen - erste szene wählen
-		* Dimmung, Farben, etc. Dauer (incl. Fade-In) und Fade-In-Dauer einstellen, und SCrun (scene run) auf "on" aktivieren
-		* Scen - zweite Szene Wählen, einstellen aktivieren usw.
-		* alle nicht benötogten scenes unter SCrun auf "off" schalten
+		* Dimmung, Farben, etc. Dauer (incl. Fade-In) und Fade-In-Dauer einstellen
+		* Szene unter SCrun (scene run) mit "on" aktivieren
+		* Scen - zweite Szene Wählen, einstellen, aktivieren usw.
+		* alle nicht benötigten scenes unter SCrun auf "off" schalten
 		* menü verlassen
 	
 	Starten:
 		* PGrun im Hauptmenü öffnen
-		* unter "scene" die eben programmierte Szene wählen – Fertig
+		* unter "scene" die eben programmierte Szene wählen
+		* Fertig
 		
-		Wenn nach dem Abschalten/Steckerziehen wieder neu Strom fließt startet das gewählte Programm automatisch
+		Wenn nach dem Abschalten/Steckerziehen wieder neu Strom fließt, startet das gewählte Programm automatisch
 
 ## Zeitprogrammierung
 	Mit SchEDL man kann 36 Events anlegen Wochentage, Uhrzeiten etc, welches der 5 Programme starten soll. Events kann man aus und anschalten
