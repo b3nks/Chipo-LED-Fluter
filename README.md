@@ -9,14 +9,14 @@ Auch im Netz gefundene Namen "Chippo LED" "Chipo LED Wash" "Litecraft LED Chipo 
  
  
 
-# Inhalt =
+# Inhalt
 	1) Wie dieses Manual zu lesen ist
 	2) Syntax diese Manuals
 	3) Aufbau des Menüs
 	4) HowTo's
 
 
-# 1) Wie dieses Manual zu lesen ist #
+# 1) Wie dieses Manual zu lesen ist
 Der Fluter hat 3 Tasten und ein Display
 	links (enter)
 	mitte (down)
@@ -63,35 +63,35 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 
 
 # 3) Aufbau des Menüs 
-  	Hello					Stammmenü
-	| AVxxx:(A001|...|A412)<<		???
-	| balanc::				Systemweite Helligkeit für die drei Farben (überschreibt Werte des Programms)
-		(				Wenn das ding vorher per Laptop (DMX) gesteuert wurde, sind die werte 	wahrscheinlich alle auf 0 und das programm bleibt unsichtbar
-	 	Rblnc:(0|...|255<)		Helligkeit für rot
-		|Gblnc:(0|...|255<)		Helligkeit für grün
-		|Bblnc:(0|...|255<)		Helligkeit für blau
+  	Hello						Stammmenü
+	| AVxxx:(A001|...|A412)<<			???
+	| balanc::					Systemweite Helligkeit für die drei Farben (überschreibt Werte des Programms)
+		(					Wenn das ding vorher per Laptop (DMX) gesteuert wurde, sind die werte 	wahrscheinlich alle auf 0 und das programm bleibt unsichtbar
+	 	Rblnc:(0|...|255<)			Helligkeit für rot
+		|Gblnc:(0|...|255<)			Helligkeit für grün
+		|Bblnc:(0|...|255<)			Helligkeit für blau
 		|enable:(on|off<)
 		<<)
-	| boost:(on|off<)			???
-	| R_H:(000|???<)			???
-	| G_H:(000|???<)			???
-	| B_H:(000|???<)			???
-	| L_H:(000|???<)			???
-	| Signal:(RS232|dmx<)			???
-	| bright:(0|...|255<)			Displayhelligkeit einstellen
-	| DSPFli:(Oben|Kopfüber<)		Display flippen falls Fluter Kopfüber betrieben. (Tastenbelegung ändert sich 	dadurch nicht)
-	| DmxDL:(0|...998|unl<)			???
-	| time::				Datum Uhrzeit Wochentag einstellen
+	| boost:(on|off<)				???
+	| R_H:(000|???<)				???
+	| G_H:(000|???<)				???
+	| B_H:(000|???<)				???
+	| L_H:(000|???<)				???
+	| Signal:(RS232|dmx<)				???
+	| bright:(0|...|255<)				Displayhelligkeit einstellen
+	| DSPFli:(Oben|Kopfüber<)			Display flippen falls Fluter Kopfüber betrieben. (Tastenbelegung ändert sich 	dadurch nicht)
+	| DmxDL:(0|...998|unl<)				???
+	| time::					Datum Uhrzeit Wochentag einstellen
 		(
-	 	YEAR:(2005|...|2099<)		Jahr
-		|M/D:((0|..|12>(1|..|31<)	Monat und Tag einstellen
-		|H:M:((0|...|24>)(0|...|59<)	Stunden und Minuten einstellen
+	 	YEAR:(2005|...|2099<)			Jahr
+		|M/D:((0|..|12>(1|..|31<)		Monat und Tag einstellen
+		|H:M:((0|...|24>)(0|...|59<)		Stunden und Minuten einstellen
 		<<)
 	| Fact :(oFF|Set<)				???
 	| Prev						???
 	| test::					Funktionen des Fluters durchtesten
 		(
-	 	red:(<)				rote LED
+	 	red:(<)					rote LED
 		|green:(<)				grüne LED
 		|blue:(<)				blaue LED
 		|ctc:(<)				???
@@ -132,8 +132,8 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 		(
 	  	event:(1|...|36)			Eventnummer wählen, das in den Folgenden Menüpunkten eingestellt wird
 	 	|Prog.:(0|...|5<)			Programm wählen, das gestartet wird
-	 	|day:(mon|tue|wed|thu|fri|sat|sun|all<)Wochentag wählen
-	 	|start:((00|...|24>)(00|..|59<)	Startuhrzeit 
+	 	|day:(mon|tue|wed|thu|fri|sat|sun|all<)	Wochentag wählen
+	 	|start:((00|...|24>)(00|..|59<)		Startuhrzeit 
 	 	|end:((00|...|24>)(00|..|59<)		Enduhrzeit
 	 	|enable:(oFF|on<)			Event aktivieren/deaktivieren
 	 	<)
@@ -143,7 +143,7 @@ Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt
 
 # 4) Howtos
 
-## Farb-Verlauf programmieren und starten ohne angeschlossenem Rechner/DMX =
+## Farb-Verlauf programmieren und starten ohne angeschlossenem Rechner/DMX
 Man kann 5 verschiedene Programme (z.B. ein Farbverlauf von Grün zu Rot zu Blau und wieder zu grün usw.) programmieren, die abgespielt werden können.
 Ein Programm setzt sich aus einzelnen "Szenen" (scenes) zusammen die nacheinander für eine bestimme Dauer und einer bestimmten Übergangsdauer in Endlosschleife abgespielt werden, wenn sie gestartet werden.
 Eine Szene definiert die Intensität der drei Farben die Dauer, die Fade-Dauer und mehr Eigenschaften (z.B. Blinkgeschwindigkeit)
