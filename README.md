@@ -39,7 +39,7 @@ Der Fluter hat 3 Tasten und ein Display
 	
 
 Der Chipo LED-Fluter hat ein Baum-Menü in dem man mit den drei Tasten navigiert und Einstellungen verändert. Es wird immer ein Menüpunkt bzw. ein Wert im Display angezeigt.
-Nach dem Anschalten befindet man sich im Stammmenü "Hello"
+Nach dem Anschalten befindet man sich im Stammmenü "Hello".
 Wie das Menü aufgebaut ist und mit welchen Tasten man sich in dem Menü bewegt und Werte verändert ist unten unter 3) systematisch aufgeschrieben.
 Wie die zu lesen ist und welche Taste bei welchem Zeichen zu drücken ist, kommt jetzt:
 
